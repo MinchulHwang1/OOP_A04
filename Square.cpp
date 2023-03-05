@@ -2,13 +2,18 @@
 
 #include"Square.h"
 
-/*  -- Method Header Comment
-	Name	: Square -- CONSTRUCTOR
-	Purpose : To instantiate a new Square object - given a set of attribute values
-	Inputs	: *colour			char		string of square colour
-			  sideLength		float		a float number to save length of side
-	Outputs	: NONE
-	Returns	: Nothing
+/**
+* \brief Square -- CONSTRUCTOR
+* \details <b>Details</b>
+*
+* To instantiate a new Square object - given a set of attribute values
+* It prints nothing
+* \param colour  - <b>char *</b> - string of square colour
+* \param sideLength - <b>float</b> - a float number to save length of side
+*
+* \return Nothing
+*
+* \see ~Square()
 */
 Square::Square(char* colour, float sideLength) {
 	// Initiating of sideLength
@@ -44,35 +49,42 @@ Square::Square(char* colour, float sideLength) {
 	}
 }
 
-/*  -- Method Header Comment
-	Name	: Square -- DESTRUCTOR
-	Purpose : To destroy the Square object - free up the memory associated with the object
-	Inputs	: NONE
-	Outputs	: Outputs a final message from the object before being destroyed
-	Returns	: Nothing
+/**
+* \brief Square -- DESTRUCTOR
+* Called upon to <i>destroy</i> a square object
+* \details <b>Details</b>
+*
+* To destroy the Square object - free up the memory associated with the object
+* It prints the message that object is destoried
+*
+* \return Nothing
+*
 */
 Square::~Square() {
 	printf("The square is squished...\n");
 }
 
-/*  -- Method Header Comment
-	Name	: GetSideLength
-	Purpose : getting length and return it.
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: sideLength		float		side length which is gotten from user
-*/
+///
+/// \brief Accessor
+/// \details <b>Details</b>
+///
+/// Getting length and return it.
+/// 
+/// \return Returns sideLength which is side length which is gotten from user
+///
+///
 float Square::GetSideLength(void) {
 	return sideLength;
 }
 
-/*  -- Method Header Comment
-	Name	: SetSideLength
-	Purpose : A mutator to save sideLength in private data member.
-	Inputs	: sideLength		float		side length which is gotten from user		
-	Outputs	: NONE
-	Returns	: Nothing
-*/
+///
+/// \brief Mutator
+/// \details <b>Details</b>
+///
+/// A mutator to save sideLength in private data member.
+/// \param sideLength - <b>float</b> - side length which is gotten from user
+/// \return Nothing
+/// 
 void Square::SetSideLength(float sideLength) {
 	if (sideLength < kZeroValue) {
 		sideLength = kZeroValue;
@@ -80,13 +92,13 @@ void Square::SetSideLength(float sideLength) {
 	this->sideLength = sideLength;
 }
 
-/*  -- Method Header Comment
-	Name	: Show
-	Purpose : Showing all of information of square.
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: Nothing
-*/
+///
+///
+/// \details <b>Details</b>
+///
+/// Showing all of information of square.
+/// \return Nothing
+/// 
 void Square::Show(void) {
 	printf("Shape Information\n");
 	printf("name			: %s\n", name);
@@ -97,39 +109,36 @@ void Square::Show(void) {
 	printf("\n");
 }
 
-/*  -- Method Header Comment
-	Name	: Perimeter
-	Purpose : to get round length of square
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: perimeter		float		round length of square
-*/
+/// 
+/// \details <b>Details</b>
+///
+/// To get round length of square
+/// \return Returns a parimeter which is round length of square
+///
 float Square::Perimeter(void) {
 	float perimeter = kZeroValue;
 	perimeter = kFourValue * OverallDimension();
 	return perimeter;
 }
 
-/*  -- Method Header Comment
-	Name	: Area
-	Purpose : to get area of square
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: area		float		area of square
-*/
+///
+/// \details <b>Details</b>
+///
+/// To get area of square
+/// \return Returns a area of square
+///
 float Square::Area(void) {
 	float area = kZeroValue;
 	area = OverallDimension()* OverallDimension();
 	return area;
 }
 
-/*  -- Method Header Comment
-	Name	: OverallDimension
-	Purpose : to get dimension of square
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: sidelength		float		length of square
-*/
+///
+/// \details <b>Details</b>
+///
+/// To get diameter of square
+/// \return Returns length of square
+///
 float Square::OverallDimension(void) {
 	return sideLength;
 }

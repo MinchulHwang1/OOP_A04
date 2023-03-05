@@ -55,7 +55,7 @@ int main() {
 	squareShape->SetShapeName(squareName);
 	square->Show();
 
-	// delete allocated memory
+	/// delete allocated memory
 	delete circle;
 	delete square;
 
@@ -83,19 +83,12 @@ void clearLine(char* string) {
 */
 float getFloat(void)
 {
-	char	record[121] = { 0 };	/* record stores the string */
+	char	record[121] = { 0 };	
 	float 	number = 0.00;
 
-	/* use fgets() to get a string from the keyboard */
 	fgets(record, sizeof(record), stdin);
 
-	/*  extract the number from the string; sscanf() returns
-		a number corresponding with the number of items it
-		found in the string */
-	if (sscanf(record, "%f", &number) != 1)
-	{
-		/* if the user did not enter a number recognizable by
-		 * the system, set number to -1.00 */
+	if (sscanf(record, "%f", &number) != 1){
 		number = -1.00;
 	}
 

@@ -2,13 +2,15 @@
 
 #include"Shape.h"
 
-/*  -- Method Header Comment
-	Name	: Shape -- CONSTRUCTOR
-	Purpose : To instantiate a new Shape object - given a set of attribute values
-			  It can be overloaded
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: Nothing
+/**
+* \brief Shape -- CONSTRUCTOR
+* \details <b>Details</b>
+*
+* To instantiate a new Shape object - given a set of attribute values.   It can be overloaded
+*
+*
+* \return Nothing
+*
 */
 Shape::Shape() {
 	strcpy(name, "Unknown");
@@ -17,14 +19,16 @@ Shape::Shape() {
 	strcpy(colourCopy, " ");
 }
 
-/*  -- Method Header Comment
-	Name	: Shape -- CONSTRUCTOR
-	Purpose : To instantiate a new Shape object - given a set of attribute values
-			  It can be overloaded
-	Inputs	: *name			char		string of shape name
-			  *colour		char		string of shape colour
-	Outputs	: NONE
-	Returns	: Nothing
+/**
+* \brief Shape -- CONSTRUCTOR
+* \details <b>Details</b>
+*
+* To instantiate a new Shape object - given a set of attribute values.   It can be overloaded
+* \param name  - <b>char *</b> - string of shape name
+* \param colour - <b>char *</b> - string of shape colour
+*
+* \return Nothing
+*
 */
 Shape::Shape(char* name, char* colour) {
 	// Initiate shape name
@@ -68,37 +72,42 @@ Shape::Shape(char* name, char* colour) {
 	strcpy(colourCopy, " ");
 }
 
-/*  -- Method Header Comment
-	Name	: GetShapeName
-	Purpose : getting shape name and return copy of name
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: *nameCopy		char	a string has name of shape
-*/
+///
+/// \brief Accessor
+/// \details <b>Details</b>
+///
+/// Getting shape name and return copy of name
+/// 
+/// \return Returns a string has name of shape
+///
+///
 char* Shape::GetShapeName(void) {
 	memcpy(nameCopy, name, sizeof(name));
 	return nameCopy;
 }
 
-/*  -- Method Header Comment
-	Name	: GetShapeColour
-	Purpose : getting shape colour and return copy of colour
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: *colourCopy		char	a string has colour of shape
-*/
+///
+/// \brief Accessor
+/// \details <b>Details</b>
+///
+/// Getting shape colour and return copy of colour
+/// 
+/// \return Returns a string has colour of shape
+///
+///
 char* Shape::GetShapeColour(void) {
 	memcpy(colourCopy, colour, sizeof(colour));
 	return colourCopy;
 }
 
-/*  -- Method Header Comment
-	Name	: SetShapeName
-	Purpose : A mutator to save shape name in private data member.
-	Inputs	: *name		char	a string to save name of shape
-	Outputs	: NONE
-	Returns	: Nothing
-*/
+///
+/// \brief Mutator
+/// \details <b>Details</b>
+///
+/// A mutator to save shape name in private data member.
+/// \param name - <b>char *</b> - a string to save name of shape
+/// \return Nothing
+/// 
 void Shape::SetShapeName(char* name) {
 	if (strcmp(name, "Circle") == 0 || strcmp(name, "circle") == 0 || strcmp(name, "CIRCLE") == 0) {
 		strcpy(this->name, name);
@@ -111,13 +120,14 @@ void Shape::SetShapeName(char* name) {
 	}
 }
 
-/*  -- Method Header Comment
-	Name	: SetShapeColour
-	Purpose : A mutator to save shape colour in private data member.
-	Inputs	: *colour		char	a string to save colour of shape
-	Outputs	: NONE
-	Returns	: Nothing
-*/
+///
+/// \brief Mutator
+/// \details <b>Details</b>
+///
+/// A mutator to save shape colour in private data member.
+/// \param colour - <b>char *</b> - a string to save colour of shape
+/// \return Nothing
+/// 
 void Shape::SetShapeColour(char* colour) {
 	if (strcmp(colour, "red") == 0 || strcmp(colour, "Red") == 0 || strcmp(colour, "RED") == 0) {
 		strcpy(this->colour, colour);

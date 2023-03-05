@@ -1,13 +1,18 @@
 // Circle.cpp
 #include"Circle.h"
 
-/*  -- Method Header Comment
-	Name	: Circle -- CONSTRUCTOR
-	Purpose : To instantiate a new circle object - given a set of attribute values
-	Inputs	: *colour			char		string of circle colour
-			  radius			float		a float number to save radius of circle
-	Outputs	: NONE
-	Returns	: Nothing
+/**
+* \brief Circle -- CONSTRUCTOR
+* \details <b>Details</b>
+*
+* To instantiate a new circle object - given a set of attribute values.
+* It prints nothing
+* \param colour  - <b>char *</b> - string of circle colour
+* \param radius - <b>float</b> - a float number to save radius of circle
+* 
+* \return Nothing
+*
+* \see ~Circle()
 */
 Circle::Circle(char* colour, float radius) {
 	if (radius < kZeroValue) {
@@ -41,35 +46,42 @@ Circle::Circle(char* colour, float radius) {
 	}
 }
 
-/*  -- Method Header Comment
-	Name	: Circle -- DESTRUCTOR
-	Purpose : To destroy the circle object - free up the memory associated with the object
-	Inputs	: NONE
-	Outputs	: Outputs a final message from the object before being destroyed
-	Returns	: Nothing
+/**
+* \brief Circle -- DESTRUCTOR
+* Called upon to <i>destroy</i> a circle object
+* \details <b>Details</b>
+*
+* To destroy the circle object - free up the memory associated with the object
+* It prints the message that object is destoried
+*
+* \return Nothing
+*
 */
 Circle:: ~Circle() {
 	printf("The circle is broken...\n");
 }
 
-/*  -- Method Header Comment
-	Name	: GetRadius
-	Purpose : getting radius and return it.
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: radius		float		radius which is gotten from user
-*/
+///
+/// \brief Accessor
+/// \details <b>Details</b>
+///
+/// Getting radius and return it.
+/// 
+/// \return Returns radius which is gotten from user as float data type
+///
+///
 float Circle::GetRadius(void) {
 	return radius;
 }
 
-/*  -- Method Header Comment
-	Name	: SetRadius
-	Purpose : A mutator to save radius in private data member.
-	Inputs	: radius		float		radius which is gotten from user
-	Outputs	: NONE
-	Returns	: Nothing
-*/
+///
+/// \brief Mutator
+/// \details <b>Details</b>
+///
+/// Mutator to save radius in private data member.
+/// \param radius - <b>float</b> - a radius which is gotten from user
+/// \return Nothing
+/// 
 void Circle::SetRadius(float radius) {
 	if (radius < kZeroValue) {
 		radius = kZeroValue;
@@ -77,13 +89,13 @@ void Circle::SetRadius(float radius) {
 	this->radius = radius;
 }
 
-/*  -- Method Header Comment
-	Name	: Show
-	Purpose : Showing all of information of circle
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: Nothing
-*/
+///
+///
+/// \details <b>Details</b>
+///
+/// Showing all of information of circle.
+///	\return Nothing
+/// 
 void Circle::Show(void) {
 	printf("Shape Information\n");
 	printf("name			: %s\n", name);
@@ -94,39 +106,36 @@ void Circle::Show(void) {
 	printf("\n");
 }
 
-/*  -- Method Header Comment
-	Name	: Perimeter
-	Purpose : to get round length of circle
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: perimeter		float		round length of circle
-*/
+/// 
+/// \details <b>Details</b>
+///
+/// To get round length of circle
+/// \return Returns a parimeter which is round length of circle
+///
 float Circle::Perimeter(void) {
 	float perimeter = kZeroValue;
 	perimeter =  kPI * OverallDimension();
 	return perimeter;
 }
 
-/*  -- Method Header Comment
-	Name	: Area
-	Purpose : to get area of circle
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: area		float		area of circle
-*/
+///
+/// \details <b>Details</b>
+///
+/// To get area of circle
+/// \return Returns a area of circle
+///
 float Circle::Area(void) {
 	float area = kZeroValue;
 	area = kPI * radius * radius;
 	return area;
 }
 
-/*  -- Method Header Comment
-	Name	: OverallDimension
-	Purpose : to get diameter of circle
-	Inputs	: NONE
-	Outputs	: NONE
-	Returns	: diameter		float		diameter of circle
-*/
+///
+/// \details <b>Details</b>
+///
+/// To get diameter of circle
+/// \return Returns a diameter of circle
+///
 float Circle::OverallDimension(void) {
 	float diameter = kZeroValue;
 	diameter = kTwoValue * radius;

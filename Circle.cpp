@@ -113,9 +113,7 @@ void Circle::Show(void) {
 /// \return Returns a parimeter which is round length of circle
 ///
 float Circle::Perimeter(void) {
-	float perimeter = kZeroValue;
-	perimeter =  kPI * OverallDimension();
-	return perimeter;
+	return kPI * OverallDimension();
 }
 
 ///
@@ -125,9 +123,7 @@ float Circle::Perimeter(void) {
 /// \return Returns a area of circle
 ///
 float Circle::Area(void) {
-	float area = kZeroValue;
-	area = kPI * radius * radius;
-	return area;
+	return kPI * radius * radius;
 }
 
 ///
@@ -137,7 +133,5 @@ float Circle::Area(void) {
 /// \return Returns a diameter of circle
 ///
 float Circle::OverallDimension(void) {
-	float diameter = kZeroValue;
-	diameter = kTwoValue * radius;
-	return diameter;
+	return kTwoValue * radius;
 }

@@ -116,9 +116,7 @@ void Square::Show(void) {
 /// \return Returns a parimeter which is round length of square
 ///
 float Square::Perimeter(void) {
-	float perimeter = kZeroValue;
-	perimeter = kFourValue * OverallDimension();
-	return perimeter;
+	return kFourValue * OverallDimension();
 }
 
 ///
@@ -128,9 +126,7 @@ float Square::Perimeter(void) {
 /// \return Returns a area of square
 ///
 float Square::Area(void) {
-	float area = kZeroValue;
-	area = OverallDimension()* OverallDimension();
-	return area;
+	return OverallDimension() * OverallDimension();
 }
 
 ///
